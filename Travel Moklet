@@ -1,0 +1,98 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package percabangan;
+import java.util.Scanner;
+/**
+ *
+ * @author LENOVO
+ */
+public class MokletTravel {
+    public static void main(String[] args) {
+        Scanner input = new Scanner (System.in);
+        int kendaraan, orang, hargak = 0, uang, kembalian, wisata, hargaw=0, totalharga=0, orangwisata=0 ;
+        String nama = null, nama1 = null ;
+        
+        System.out.println("Ayo jalan jalan keliling Jawa Timur!");
+        System.out.println("Pilihan kendaraan: ");
+        System.out.println("1 Bus max 50 kursi dengan harga Rp. 2.000.000");
+        System.out.println("2 Elf max 19 kursi dengan harga Rp. 700.000");
+        System.out.println("3 Mobil max 6 kursi dengan harga Rp. 400.000");
+        System.out.print("Pilih kendaraan anda (dalam angka): ");
+        kendaraan = input.nextInt();
+        
+        switch (kendaraan) {
+            case 1 :
+                hargak = 2000000;
+                nama = "Bus" ;
+                break;
+            case 2 :
+                hargak =700000;
+                nama = "Elf" ;
+                break;
+            case 3 :
+                hargak = 400000;
+                nama = "mobil" ;
+                break;
+            default :
+                System.out.println("Tidak terdaftar dalam data");
+                break;
+        }
+        
+        System.out.println("");
+        System.out.println("Pilihan destinasi wisata:");
+        System.out.println("1 Gunung Bromo dengan harga Rp. 40.000/orang");
+        System.out.println("2 Pantai Sendang Biru dengan harga Rp. 20.000/orang");
+        System.out.println("3 Candi Penataran dengan harga Rp. 5.000/orang");
+        System.out.println("4 Air Terjun Coban Rondo dengan harga Rp. 35.000/orang");
+        System.out.println("5 Wisata Bahari Lamongan dengan harga Rp. 150.000/orang");
+        System.out.print("Pilih wisata anda (dalam angka): ");
+        wisata = input.nextInt();
+        System.out.print("Masukkan berapa orang yang ingin berwisata: ");
+        orangwisata = input.nextInt();
+        
+        switch (wisata){
+            case 1 :
+                hargaw = 40000*orangwisata;
+                nama1 = "Gunung Bromo" ;
+                break;
+            case 2 :
+                hargaw = 20000*orangwisata;
+                nama1 = "Pantai Sendang Biru";
+                break;
+            case 3 :
+                hargaw = 5000*orangwisata;
+                nama1 = "Candi Penataran";
+                break;
+            case 4 :
+                hargaw = 35000*orangwisata;
+                nama1 = "Air Terjun Coban Rondo";
+                break;
+            case 5 :
+                hargaw = 150000*orangwisata;
+                nama1= "Wisata Bahari Lamongan";
+                break;
+          
+        }
+        System.out.println("");
+        totalharga = hargak+hargaw;
+        System.out.println("Total biaya yang harus dibayarkan adalah "+totalharga);
+        System.out.print("Masukkan uang anda : ");
+        uang = input.nextInt ();
+        
+        System.out.println("");
+        if (uang>totalharga) {
+            kembalian = uang - totalharga ;
+            System.out.println("Anda menyewa "+nama+" dengan harga "+hargak+" dan");
+            System.out.println("Anda memiliki tujuan wisata "+nama1+" dengan harga tiket "+hargaw);
+            System.out.println("Uang anda "+uang+" anda mendapat kembalian sebesar "+kembalian);
+        } else if (uang<totalharga) {
+            System.out.println("Maaf uang anda kurang ");
+        } else if (uang==totalharga){
+            System.out.println("Anda menyewa "+nama+" dengan harga "+hargak);
+            System.out.println("Tujuan destinasi wisata anda adalah "+nama1+" dengan harga tiket yaitu "+hargaw);
+        }
+        System.out.println("Happy holiday!");
+    }
+}
